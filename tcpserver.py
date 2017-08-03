@@ -38,7 +38,11 @@ class TCPServer(object):
         while True:
             clientSocket, _ = self.socket.accept()
             if self.isTLS:
-                clientSocket = self.context.wrap_socket(clientSocket, server_side = True)
+                try:
+                    clientSocket = self.context.wrap_socket(clientSocket, server_side = True)
+                except:
+                    clientSocket.close()
+                    continue
             tunnel.Tunnel(clientSocket).start()
 
     def __del__(self):
