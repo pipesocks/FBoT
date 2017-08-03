@@ -1,0 +1,22 @@
+{
+    "in": {
+        "type": "tls",
+        "addr": "0.0.0.0",
+        "port": 443,
+        "cert": "cert.pem",
+        "key": "key.pem"
+    },
+    "out": [
+        {
+            "type": "plain",
+            "addr": "127.0.0.1",
+            "port": 80
+        },
+        {
+            "type": "plain",
+            "addr": "127.0.0.1",
+            "port": 8388,
+            "inpass": "password"
+        }
+    ]
+}

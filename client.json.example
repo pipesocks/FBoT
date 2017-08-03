@@ -1,0 +1,16 @@
+{
+    "in": {
+        "type": "plain",
+        "addr": "127.0.0.1",
+        "port": 8388
+    },
+    "out": [
+        {
+            "type": "tls",
+            "addr": "example.com",
+            "port": 443,
+            "outpass": "password",
+            "ca": "ca.crt"
+        }
+    ]
+}
